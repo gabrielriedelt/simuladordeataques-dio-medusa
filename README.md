@@ -28,17 +28,15 @@ DVWA (Damn Vulnerable Web Application)
 🧪 Atividades Realizadas:
 
 
-🔎 Enumeração de Serviços (SMB)
+🔎 Password Spraying (SMB)
 
 Foi realizada a enumeração de compartilhamentos SMB utilizando:
 
 smbclient -L //192.168.56.101 -U msfadmin
 
-Com isso, foi possível identificar:
+Com isso, Ao contrário da força bruta tradicional que foca em um usuário só, aqui você testou senhas comuns (senhas_spray.txt) contra uma lista de diversos usuários (smb_users.txt).
 
-Compartilhamentos disponíveis
-Estrutura de diretórios
-Indícios de configurações vulneráveis
+Resultado: O Medusa encontrou sucesso para o usuário msfadmin. Esse método é extremamente eficaz porque evita o bloqueio de contas por excesso de tentativas em um único perfil, "pulando" de usuário em usuário.
 
 
 🔑 Ataque de Força Bruta com Medusa (FTP)
@@ -47,11 +45,7 @@ Utilizando a ferramenta Medusa, foram realizados ataques de força bruta contra 
 
 medusa -h 192.168.56.101 -U user.txt -P pass.txt -M ftp -t 6
 
-Resultados obtidos:
-
-Identificação de credenciais válidas
-Descoberta do usuário msfadmin
-Senha encontrada com sucesso via brute force
+O ataque funcionou porque a automação permitiu testar rapidamente múltiplas combinações de usuários e senhas contidas nos arquivos user.txt e pass.txt. E o resultado foi que o sistema identificou o par de credenciais válido: User: msfadmin / Password: msfadmin [SUCCESS].
 
 
 📂 Acesso ao Serviço FTP
@@ -74,7 +68,6 @@ Também foram realizados testes na aplicação vulnerável DVWA, incluindo:
 Exploração de falhas de autenticação
 Testes de força bruta
 Análise de vulnerabilidades web comuns
-
 
 No fim, conhecimentos Adquiridos:
 
