@@ -80,6 +80,9 @@ Identificação de credenciais fracas
 Uso prático de ferramentas de Pentest
 Interpretação de respostas de serviços (SMB, FTP)
 
+O sucesso das invasões simuladas demonstra a fragilidade de sistemas que utilizam credenciais padrão e serviços de rede (como FTP e SMB) sem políticas de bloqueio de tentativas ou monitoramento de tráfego. Através do Medusa, foi possível automatizar a descoberta de falhas que, manualmente, levariam horas, provando que a segurança baseada apenas em 'obscuridade' não é suficiente contra ferramentas modernas de auditoria.
+
+
 ⚠️ Aviso Legal
 
 Este projeto foi realizado exclusivamente para fins educacionais, em ambiente controlado.
